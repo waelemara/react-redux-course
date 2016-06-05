@@ -6,10 +6,11 @@ import routes from './routes';
 import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import configureStore from './store/configureStore';
+import {loadCourses} from './actions/courseActions';
 import {Provider} from 'react-redux';
 
 const store = configureStore();
-
+store.dispatch(loadCourses());
 render(
     <Provider store={store} >
         <Router

@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import * as courseActions from '../../actions/courseActions';
+import CourseList from "./CourseList";
 
 class CoursesPage extends React.Component {
     constructor(props, context) {
@@ -22,7 +23,7 @@ class CoursesPage extends React.Component {
     }
 
     onClick(event) {
-        this.props.dispatch(courseActions.createCourse(this.state.course));
+        //this.props.dispatch(courseActions.createCourse(this.state.course));
     }
 
     courseRow(course, index) {
@@ -37,7 +38,7 @@ class CoursesPage extends React.Component {
         return (
             <div>
                 <h1>Courses</h1>
-                {this.props.courses.map(this.courseRow)}
+                <CourseList courses={this.props.courses} />
                 <h2>Add Course</h2>
                 <input
                     type="text"
